@@ -1,0 +1,38 @@
+# DataDog Autodiscovery Configuration para Temporal
+# Este archivo configura la recolección de métricas de Temporal
+
+ad_identifiers:
+  - temporal-frontend
+  - temporal-server
+
+init_config:
+
+instances:
+  # Configuración para Prometheus scraping
+  - prometheus_url: http://%%host%%:8000/metrics
+    namespace: "temporal"
+    metrics:
+      # Workflow metrics
+      - temporal_workflow_*
+      - temporal_activity_*
+      - temporal_task_queue_*
+
+      # History service metrics
+      - temporal_history_*
+      - temporal_matching_*
+
+      # System metrics
+      - temporal_service_*
+      - temporal_persistence_*
+
+    tags:
+      - service:temporal
+      - cluster:temporal-ecs-cluster
+      - env:production
+
+  # Configuración para StatsD
+  - use_dogstatsd: true
+    dogstatsd_addr: localhost:8125
+    tags:
+      - service:temporal
+      - cluster:temporal-ecs-cluster

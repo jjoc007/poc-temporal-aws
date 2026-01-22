@@ -1,0 +1,21 @@
+{
+  "cluster": "temporal-ecs-cluster",
+  "taskDefinition": "temporal-worker:1",
+  "count": 1,
+  "launchType": "FARGATE",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": ["subnet-0af0e2f5a9f6a3929", "subnet-0941a3655338ab495"],
+      "securityGroups": ["sg-0daea84947869c8b6"],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "overrides": {
+    "containerOverrides": [
+      {
+        "name": "worker-service",
+        "command": ["sh", "-c", "echo 'Worker running - workflows will be processed automatically'"]
+      }
+    ]
+  }
+}

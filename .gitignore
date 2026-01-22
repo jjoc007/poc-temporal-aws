@@ -1,0 +1,162 @@
+# ============================================
+# Terraform
+# ============================================
+
+# Archivos de estado de Terraform
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Planes de Terraform
+*.tfplan
+*.tfplan.*
+tfplan
+tfplan.*
+
+# Archivos de override
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Archivos de crash
+crash.log
+crash.*.log
+
+# Archivos de exclusión
+exclude.tf
+exclude.tf.json
+
+# Archivos de CLI
+.terraformrc
+terraform.rc
+
+# ============================================
+# Go
+# ============================================
+
+# Binarios compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/bin/
+/dist/
+
+# Archivos de test
+*.test
+*.prof
+
+# Dependencias
+vendor/
+go.work
+go.work.sum
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ============================================
+# Docker
+# ============================================
+
+# Imágenes Docker locales
+*.tar
+*.tar.gz
+
+# ============================================
+# Secrets y Credenciales
+# ============================================
+
+# Archivos de credenciales
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
+*.secret
+.env
+.env.local
+.env.*.local
+
+# Archivos de configuración sensibles
+*credentials*
+*secret*
+*password*
+*token*
+
+# ============================================
+# Logs
+# ============================================
+
+*.log
+logs/
+*.log.*
+
+# ============================================
+# Archivos temporales
+# ============================================
+
+# Archivos temporales del sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# ============================================
+# Archivos específicos del proyecto
+# ============================================
+
+# Scripts de ejecución temporal
+test-*.sh
+run-*.sh
+
+# Archivos de configuración local
+local.tf
+local.tfvars
+*.local.tfvars
+
+# Archivos de documentación generados
+*.pdf
+*.docx
+
+# Archivos de backup
+*.backup
+*.bak
+backup/
+
+# ============================================
+# AWS
+# ============================================
+
+# Archivos de credenciales AWS
+.aws/
+*.pem
+*.key
+
+# ============================================
+# Datadog
+# ============================================
+
+# Archivos de configuración local de Datadog
+datadog-local.yaml
+.datadog/

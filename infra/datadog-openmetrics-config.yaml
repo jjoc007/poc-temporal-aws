@@ -1,0 +1,16 @@
+# Configuración de OpenMetrics para Temporal
+# Este archivo se puede usar como referencia, pero en ECS Fargate
+# usamos Docker labels o variables de entorno
+
+init_config:
+  {}
+
+instances:
+  - prometheus_url: http://temporal-frontend:8000/metrics
+    namespace: temporal
+    metrics:
+      - temporal.*
+    tags:
+      - service:temporal-server
+      - environment:production
+      - cluster:temporal-ecs-cluster

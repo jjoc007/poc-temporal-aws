@@ -1,0 +1,22 @@
+# Pre-commit hooks configuration
+# Instalar con: pip install pre-commit
+# Luego ejecutar: pre-commit install
+
+repos:
+  # ============================================
+  # Hooks generales
+  # ============================================
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: [--unsafe]  # Permite tags personalizados
+      - id: check-json
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: detect-private-key # Opcional: proteger ramas principales
